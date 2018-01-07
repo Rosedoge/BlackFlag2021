@@ -27,37 +27,45 @@ public class MouseLook : MonoBehaviour {
 
 	public float minimumY = -60F;
 	public float maximumY = 60F;
+    Quaternion originalRot;// = transform.rotation;
+   
+    float rotationY = 0F;
 
-	float rotationY = 0F;
-
+    
 	void Update ()
 	{
-		if (axes == RotationAxes.MouseXAndY)
+		if (axes == RotationAxes.MouseXAndY) // We care about X
 		{
 			float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
 			
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
-			
-			transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            GetComponent<Rigidbody>().AddRelativeTorque(0f, 0f, Input.GetAxis("Mouse X") *100);
+
+
+            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
 		}
 		else if (axes == RotationAxes.MouseX)
 		{
-			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 45);
 		}
 		else
 		{
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
 			rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
 			
-			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, originalRot.z);
 		}
 	}
-	
-	void Start ()
+    private void Awake()
+    {
+        originalRot = transform.rotation;
+    }
+    void Start ()
 	{
-		// Make the rigid body not change rotation
-		if (GetComponent<Rigidbody>())
+       
+        // Make the rigid body not change rotation
+        if (GetComponent<Rigidbody>())
 			GetComponent<Rigidbody>().freezeRotation = true;
 	}
 }
