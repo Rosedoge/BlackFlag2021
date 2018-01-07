@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackFlag2021", "BlackFlag2021.csproj", "{9AA85187-881F-9ED0-92B4-84719923899F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackFlag2021.Editor", "BlackFlag2021.Editor.csproj", "{2C5818B9-D873-D2BC-2079-24B46B456E7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AA85187-881F-9ED0-92B4-84719923899F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA85187-881F-9ED0-92B4-84719923899F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA85187-881F-9ED0-92B4-84719923899F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AA85187-881F-9ED0-92B4-84719923899F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5818B9-D873-D2BC-2079-24B46B456E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5818B9-D873-D2BC-2079-24B46B456E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5818B9-D873-D2BC-2079-24B46B456E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5818B9-D873-D2BC-2079-24B46B456E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
